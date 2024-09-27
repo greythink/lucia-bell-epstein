@@ -630,6 +630,11 @@ video {
 [hidden] {
   display: none;
 }
+    /* Base font sizes */
+    html {
+        font-size: 18px;
+    }
+
     /* Typefaces */
     body {
   font-family: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
