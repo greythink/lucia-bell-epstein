@@ -2,7 +2,7 @@ module.exports = function (config) {
     return {
       dir: {
         input: 'src',
-        output: 'public',
+        output: 'build',
       },
       dataTemplateEngine: 'njk',
       templateFormats: ['njk'],
