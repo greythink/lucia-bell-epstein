@@ -18,7 +18,7 @@ module.exports = {
             black: '#000000',
         },
         fontFamily: {
-            body: ['Courier Prime'].concat(defaultTheme.fontFamily.mono),
+            body: ['"Courier Prime"'].concat(defaultTheme.fontFamily.mono),
         },
 
         extend: {},
