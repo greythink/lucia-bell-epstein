@@ -1,0 +1,4 @@
+@layer base {
+    /* Typefaces */
+    body { @apply font-body; }
+}
