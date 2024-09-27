@@ -1,29 +1,25 @@
-{% extends 'layouts/base.njk' %}
-
-
-
-{% set headerNavUrl = headerNav.url if headerNav.url else '/info' %}
-{% set headerNavLabel = headerNav.label if headerNav.label else 'Info' %}
-
-
-
-{% block pageHead %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {{ title }}
+        Lucia Bell-Epstein
     </title>
 
-    {# Fonts and stylesheets #}
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
-{% endblock %}
+
+    </head>
 
 
 
-{% block pageHeader %}
+    <body>
+        
     <header class="mt-6 px-gutter">
         <nav class="flex justify-between">
             <a href="/" class="block">
@@ -31,17 +27,18 @@
                     Lucia Bell-Epstein
                 </h1>
             </a>
-            <a href="{{ headerNavUrl }}" class="block">
-                {{ headerNavLabel }}
+            <a href="/" class="block">
+                Back
             </a>
         </nav>
     </header>
-{% endblock %}
 
-
-
-{% block pageMain %}
+        
     <main>
-        {% block main %}{% endblock %}
+        
     </main>
-{% endblock %}
+
+        
+        
+    </body>
+</html>

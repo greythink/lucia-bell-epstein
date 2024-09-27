@@ -21,7 +21,11 @@ module.exports = {
             body: ['"Courier Prime"'].concat(defaultTheme.fontFamily.mono),
         },
 
-        extend: {},
+        extend: {
+            spacing: {
+                gutter: '1.111111rem',
+            },
+        },
     },
     plugins: [],
 };
