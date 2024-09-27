@@ -642,6 +642,12 @@ video {
     h1, h2, h3, h4, h5, h6 {
   font-family: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -655,6 +661,18 @@ video {
   display: -ms-flexbox;
   display: flex;
 }
+.flex-none {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+     -moz-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+.basis-1\/2 {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+}
 .justify-between {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -662,11 +680,20 @@ video {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.gap-gutter {
+  gap: 1.111111rem;
+}
 .px-gutter {
   padding-left: 1.111111rem;
   padding-right: 1.111111rem;
 }
+.pl-1\/6 {
+  padding-left: 16.666666%;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
 }
