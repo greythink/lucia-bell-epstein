@@ -668,11 +668,6 @@ video {
       -ms-flex: none;
           flex: none;
 }
-.basis-1\/2 {
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
-}
 .basis-info-col {
   -webkit-flex-basis: -webkit-calc(50% - (1.111111rem/2));
       -ms-flex-preferred-size: calc(50% - (1.111111rem/2));
