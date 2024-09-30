@@ -1,3 +1,21 @@
 @layer components {
+    /* Icons */
+    .icon { @apply bg-no-repeat bg-center; }
+    .icon-left-arrow {
+        background-image: url("../icons/left-arrow.svg");
+    }
+    .icon-right-arrow {
+        background-image: url("../icons/right-arrow.svg");
+    }
 
+
+
+    /* Carousels */
+    .splide__arrows {
+        @apply fixed bottom-8 left-1/2 -translate-x-1/2;
+
+        .splide__arrow { @apply relative; }
+        .splide__arrow--prev { @apply right-24; }
+        .splide__arrow--next { @apply left-24; }
+    }
 }

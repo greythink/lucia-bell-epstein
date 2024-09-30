@@ -2,6 +2,7 @@ module.exports = function (config) {
     // Set output paths
     config.addPassthroughCopy('src/media');
     config.addPassthroughCopy('src/assets/js');
+    config.addPassthroughCopy('src/assets/icons');
 
     // Copy library files
     config.addPassthroughCopy({
