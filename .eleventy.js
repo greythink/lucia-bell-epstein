@@ -1,6 +1,7 @@
 module.exports = function (config) {
     // Set output paths
     config.addPassthroughCopy('src/media');
+    config.addPassthroughCopy('src/assets/js');
 
     // Copy library files
     config.addPassthroughCopy({
