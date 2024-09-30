@@ -23,16 +23,20 @@
         {% set headerNavLabel = headerNav.label if headerNav.label else 'Info' %}
 
         {% block pageHeader %}
-            <header class="mt-6 mb-10 px-gutter">
+            <header class="md:fixed md:top-0 md:w-full mt-7 mb-10 px-gutter">
                 <nav class="flex justify-between">
-                    <a href="/" class="block">
-                        <h1 class="text-base">
-                            Lucia Bell-Epstein
-                        </h1>
-                    </a>
-                    <a href="{{ headerNavUrl }}" class="block">
-                        {{ headerNavLabel }}
-                    </a>
+                    <div class="md:w-1/6 md:pr-gutter">
+                        <a href="/" class="">
+                            <h1 class="text-base">
+                                Lucia Bell-Epstein
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="md:w-1/6 text-right">
+                        <a href="{{ headerNavUrl }}" class="">
+                            {{ headerNavLabel }}
+                        </a>
+                    </div>
                 </nav>
             </header>
         {% endblock %}
@@ -40,7 +44,7 @@
 
 
         {% block pageMain %}
-            <main>
+            <main class="md:mt-7 px-gutter">
                 {% block main %}{% endblock %}
             </main>
         {% endblock %}
