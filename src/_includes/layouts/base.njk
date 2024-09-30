@@ -19,27 +19,7 @@
 
 
     <body>
-        {% set headerNavUrl = headerNav.url if headerNav.url else '/info' %}
-        {% set headerNavLabel = headerNav.label if headerNav.label else 'Info' %}
-
-        {% block pageHeader %}
-            <header class="sm:fixed sm:top-0 sm:w-full mt-7 mb-10 px-gutter">
-                <nav class="flex justify-between">
-                    <div class="sm:w-1/6 sm:pr-gutter">
-                        <a href="/" class="">
-                            <h1 class="text-base">
-                                Lucia Bell-Epstein
-                            </h1>
-                        </a>
-                    </div>
-                    <div class="sm:w-1/6 text-right">
-                        <a href="{{ headerNavUrl }}" class="">
-                            {{ headerNavLabel }}
-                        </a>
-                    </div>
-                </nav>
-            </header>
-        {% endblock %}
+        {% block pageHeader %}{% endblock %}
 
 
 

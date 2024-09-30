@@ -32,7 +32,6 @@ module.exports = {
             spacing: {
                 gutter: '1.111111rem',
                 '1/6': '16.666666%',
-                'info-col': 'calc(50% - (1.111111rem/2))',
             },
         },
     },
