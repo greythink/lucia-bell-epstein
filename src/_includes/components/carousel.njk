@@ -10,9 +10,11 @@
             <ul class="splide__list">
                 {% for slideImage in carouselSlidesList %}
                     <li class="splide__slide">
-                        <figure class="">
-                            <img class="" src="{{ slideImage.url }}" alt="{{ slideImage.alt }}">
-                        </figure>
+                        <div class="flex flex-col justify-center items-center h-[80vh]">
+                            <figure class="max-w-3/4">
+                                <img class="w-full" src="{{ slideImage.url }}" alt="{{ slideImage.alt }}">
+                            </figure>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
