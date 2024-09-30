@@ -20,6 +20,13 @@ module.exports = {
         fontFamily: {
             body: ['"Courier Prime"'].concat(defaultTheme.fontFamily.mono),
         },
+        screens: {
+            'xs': '540px',
+            'sm': '768px',
+            'md': '1024px',
+            'lg': '1280px',
+            'xl': '1536px',
+        },
 
         extend: {
             spacing: {
