@@ -684,6 +684,9 @@ video {
 .hidden {
   display: none;
 }
+.max-w-5\/6 {
+  max-width: 83.333333%;
+}
 .justify-between {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -711,6 +714,12 @@ video {
 }
 .last\:mb-0:last-child {
   margin-bottom: 0px;
+}
+@media (min-width: 540px) {
+
+  .xs\:max-w-2\/3 {
+    max-width: 66.666667%;
+  }
 }
 @media (min-width: 768px) {
 
@@ -746,6 +755,14 @@ video {
     width: 16.666667%;
   }
 
+  .sm\:max-w-full {
+    max-width: 100%;
+  }
+
+  .sm\:max-w-5\/4 {
+    max-width: 125%;
+  }
+
   .sm\:flex-none {
     -webkit-box-flex: 0;
     -webkit-flex: none;
@@ -768,5 +785,11 @@ video {
 
   .sm\:pr-gutter {
     padding-right: 1.111111rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .lg\:max-w-3\/4 {
+    max-width: 75%;
   }
 }

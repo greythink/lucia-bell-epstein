@@ -33,6 +33,10 @@ module.exports = {
                 gutter: '1.111111rem',
                 '1/6': '16.666666%',
             },
+            maxWidth: ({ theme }) => ({
+                ...theme('size'),
+                '5/4': '125%',
+            }),
         },
     },
     plugins: [],
