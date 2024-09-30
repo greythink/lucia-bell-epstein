@@ -745,6 +745,12 @@ video {
 .h-\[80vh\] {
   height: 80vh;
 }
+.max-h-full {
+  max-height: 100%;
+}
+.max-h-\[80vh\] {
+  max-height: 80vh;
+}
 .w-5\/6 {
   width: 83.333333%;
 }
@@ -756,6 +762,9 @@ video {
 }
 .max-w-5\/6 {
   max-width: 83.333333%;
+}
+.max-w-full {
+  max-width: 100%;
 }
 .flex-col {
   -webkit-box-orient: vertical;
