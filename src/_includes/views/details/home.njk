@@ -18,3 +18,16 @@
         </nav>
     </div>
 {% endblock %}
+
+
+
+{% block main %}
+    <article class="flex justify-center items-center">
+        {% set carouselParams = {
+            id: 'home-image-carousel',
+            slidesList: carousels.homepageImages,
+            label: 'Photos by Lucia Bell-Epstein'
+        } %}
+        {% include 'components/carousel.njk' %}
+    </article>
+{% endblock %}

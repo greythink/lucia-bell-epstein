@@ -1,0 +1,21 @@
+{% set carouselId = carouselParams.id if carouselParams.id else null  %}
+{% set carouselSlidesList = carouselParams.slidesList if carouselParams.slidesList else [] %}
+{% set carouselLabel = carouselParams.label if carouselParams.label else '' %}
+
+
+
+{% if carouselSlidesList|length %}
+    <div id="{{ carouselId }}" class="splide" aria-label="{{ carouselLabel }}">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for slideImage in carouselSlidesList %}
+                    <li class="splide__slide">
+                        <figure class="">
+                            <img class="" src="{{ slideImage.url }}" alt="{{ slideImage.alt }}">
+                        </figure>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
