@@ -1,3 +1,7 @@
+{% set carouselSlidesList = carouselSlidesList if carouselSlidesList else [] %}
+
+
+
 <div class="splide__arrows">
     <button class="splide__arrow splide__arrow--prev">
         <div class="icon icon-left-arrow w-6 h-6"></div>
@@ -5,6 +9,15 @@
             Prev
         </span>
     </button>
+    <div class="absolute left-1/2 -translate-x-1/2">
+        <span id="carousel-slide-index" class="" aria-label="Current slide number">
+            01
+        </span>
+        /
+        <span class="" aria-label="Number of total slides">
+            {{ carouselSlidesList|length }}
+        </span>
+    </div>
     <button class="splide__arrow splide__arrow--next">
         <div class="icon icon-right-arrow w-6 h-6"></div>
         <span class="sr-only">
