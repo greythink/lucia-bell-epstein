@@ -827,7 +827,6 @@ video {
      -moz-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-/* Todo: Remove unused height utilities */
 .h-100vh {
         height: 100vh;
         height: -webkit-calc(var(--vh, 1vh) * 100);
