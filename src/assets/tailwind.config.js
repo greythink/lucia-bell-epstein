@@ -38,6 +38,9 @@ module.exports = {
                 ...theme('size'),
                 '5/4': '125%',
             }),
+            maxHeight: ({ theme }) => ({
+                ...theme('size'),
+            }),
         },
     },
     plugins: [],

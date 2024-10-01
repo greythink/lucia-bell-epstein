@@ -3,7 +3,7 @@
 
 
 {% block pageHeader %}
-    <div class="flex justify-between mt-7 mb-10 px-gutter">
+    <div class="absolute w-full top-0 z-20 flex justify-between mt-7 mb-10 px-gutter">
         <header class="pr-gutter">
             <nav class="">
                 <a href="/" class="">
@@ -22,7 +22,7 @@
 
 
 {% block main %}
-    <article class="h-80vh">
+    <article class="">
         {% set carouselParams = {
             id: 'home-image-carousel',
             slidesList: carousels.homepageImages,

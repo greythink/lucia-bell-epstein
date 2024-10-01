@@ -1,4 +1,9 @@
 @layer utilities {
+    /* Todo: Remove unused height utilities */
+    .h-100vh {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+    }
     .h-80vh {
         height: 80vh;
         height: calc(var(--vh, 1vh) * 80);

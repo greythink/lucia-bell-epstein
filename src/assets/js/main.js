@@ -14,5 +14,6 @@
         speed: 1000,
         type: 'loop',
         mediaQuery: 'min',
+        pagination: false,
     }).mount();
 })();
