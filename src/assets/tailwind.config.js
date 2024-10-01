@@ -16,6 +16,7 @@ module.exports = {
             transparent: 'transparent',
             current: 'currentColor',
             black: '#000000',
+            white: '#ffffff',
         },
         fontFamily: {
             body: ['"Courier Prime"'].concat(defaultTheme.fontFamily.mono),
