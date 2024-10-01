@@ -1,3 +1,13 @@
+// Calculate JS-assisted values
+(function () {
+    var vh = window.innerHeight * 0.01;
+    // Create --vh CSS variable
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+})();
+
+
+
+// Set up carousels
 (function () {
     // Initialise carousel
     var homepageCarousel = new Splide('#home-image-carousel', {
