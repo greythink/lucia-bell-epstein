@@ -16,5 +16,6 @@
         mediaQuery: 'min',
         pagination: false,
         keyboard: 'global',
+        lazyload: 'nearby',
     }).mount();
 })();
