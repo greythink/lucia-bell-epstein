@@ -15,5 +15,6 @@
         type: 'loop',
         mediaQuery: 'min',
         pagination: false,
+        keyboard: 'global',
     }).mount();
 })();
