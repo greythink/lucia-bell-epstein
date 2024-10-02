@@ -7,6 +7,13 @@
 
 
 
+// Initialise lazysizes
+(function () {
+    window.lazySizes.init();
+})();
+
+
+
 // Set up carousels
 (function () {
     // Initialise carousel

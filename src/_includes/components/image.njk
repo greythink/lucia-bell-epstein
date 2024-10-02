@@ -16,10 +16,15 @@
 
 
 
+{# Ensure that widths are added in increasing order #}
 {% set imageConfig = {
     'default': {
         formats: ['jpeg'],
         widths: [1500]
+    },
+    'carousel': {
+        formats: ['jpeg'],
+        widths: [600, 800, 1200, 1800, 2100, 2400]
     }
 } %}
 {% set imageTransformList = imageAsset|imageTransform(imageConfig[imagePreset]) %}
@@ -45,9 +50,14 @@
         {% else %}
             <figure class="{{ imageFigureClass }}">
                 <img
-                    class="{{ imageClass }}"
+                    class="{{ imageClass }} {{ 'lazyload' if imageIsLazyLoaded else '' }}"
                     src="{{ imageDefaultTransform.url }}"
                     alt="{{ imageAltText }}"
+                    {% if imageIsLazyLoaded %}
+                        data-sizes="auto"
+                        data-src="{{ imageDefaultTransform.url }}"
+                        data-srcset="{{ imageTransformList|imageTxToSrcset }}"
+                    {% endif %}
                 >
                 {% if imageCaption %}
                     <figcaption class="{{ imageCaptionClass }}">
