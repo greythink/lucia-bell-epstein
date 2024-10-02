@@ -642,6 +642,12 @@ video {
     h1, h2, h3, h4, h5, h6 {
   font-family: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+    /* Font smoothing */
+    body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
 /* Icons */
 .icon {
   background-position: center;
