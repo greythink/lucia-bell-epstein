@@ -31,7 +31,6 @@ module.exports = {
 
         extend: {
             spacing: {
-                gutter: '1.111111rem',
                 '1/20': '5%',
                 '1/6': '16.666666%',
             },

@@ -632,7 +632,7 @@ video {
 }
     /* Base font sizes */
     html {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Typefaces */
@@ -818,12 +818,12 @@ video {
 .break-all {
   word-break: break-all;
 }
-.px-gutter {
-  padding-left: 1.111111rem;
-  padding-right: 1.111111rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
-.pr-gutter {
-  padding-right: 1.111111rem;
+.pr-5 {
+  padding-right: 1.25rem;
 }
 .text-right {
   text-align: right;
@@ -918,8 +918,8 @@ video {
             flex-basis: 16.666667%;
   }
 
-  .sm\:pr-gutter {
-    padding-right: 1.111111rem;
+  .sm\:pr-5 {
+    padding-right: 1.25rem;
   }
 }
 @media (min-width: 1024px) {
