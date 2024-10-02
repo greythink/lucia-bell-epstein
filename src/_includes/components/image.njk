@@ -1,0 +1,60 @@
+{# components/image #}
+
+
+
+{# Params #}
+{% set imageAsset = imageParams.image if imageParams.image else '' %}
+{% set imageCaption = imageParams.caption if imageParams.caption else '' %}
+{% set imageAltText = imageParams.altText if imageParams.altText else '' %}
+{% set imagePreset = imageParams.preset if imageParams.preset else 'default' %}
+{% set imageClass = imageParams.class if imageParams.class else '' %}
+{% set imageFigureClass = imageParams.figureClass if imageParams.figureClass else '' %}
+{% set imageCaptionClass = imageParams.captionClass if imageParams.captionClass else '' %}
+{% set imageHasImgOnly = imageParams.imgOnly if (imageParams.imgOnly != null) else false %}
+{% set imageIsBackground = imageParams.background if (imageParams.background != null) else false %}
+{% set imageIsLazyLoaded = imageParams.lazy if (imageParams.lazy != null) else true %}
+
+
+
+{% set imageConfig = {
+    'default': {
+        formats: ['jpeg'],
+        widths: [1500]
+    }
+} %}
+{% set imageTransformList = imageAsset|imageTransform(imageConfig[imagePreset]) %}
+{% set imageDefaultFormat = imageConfig[imagePreset].formats|first %}
+
+{% if imageTransformList %}
+    {% set imageDefaultTransform = imageTransformList[imageDefaultFormat]|first %}
+{% endif %}
+
+
+
+{# Output #}
+{% if imageTransformList %}
+    {% if imageIsBackground %}
+        <div class="{{ imageClass }}" style="background-image: url('..{{ imageDefaultTransform.url }}')"></div>
+    {% else %}
+        {% if imageHasImgOnly %}
+            <img
+                class="{{ imageClass }}"
+                src="{{ imageDefaultTransform.url }}"
+                alt="{{ imageAltText }}"
+            >
+        {% else %}
+            <figure class="{{ imageFigureClass }}">
+                <img
+                    class="{{ imageClass }}"
+                    src="{{ imageDefaultTransform.url }}"
+                    alt="{{ imageAltText }}"
+                >
+                {% if imageCaption %}
+                    <figcaption class="{{ imageCaptionClass }}">
+                        {{ imageCaption }}
+                    </figcaption>
+                {% endif %}
+            </figure>
+        {% endif %}
+    {% endif %}
+{% endif %}

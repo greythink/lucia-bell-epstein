@@ -1,3 +1,7 @@
+const imageTransformFilter = require('./src/_includes/filters/imageTransform.js');
+
+
+
 module.exports = function (config) {
     // Set output paths
     config.addPassthroughCopy('src/media');
@@ -8,6 +12,9 @@ module.exports = function (config) {
     config.addPassthroughCopy({
         'node_modules/@splidejs/splide/dist/js/splide.min.js': 'assets/js/libs/splide.min.js'
     });
+
+    // Custom template filters
+    config.addFilter('imageTransform', imageTransformFilter);
 
     return {
       dir: {
