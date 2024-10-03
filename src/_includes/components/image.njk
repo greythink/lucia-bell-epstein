@@ -25,6 +25,7 @@
     'carousel': {
         formats: ['jpeg'],
         widths: [600, 800, 1200, 1800, 2100, 2400],
+        defaultWidthPosition: 2,
         sizes: '(min-width: 1280px) 50vw, 83vw'
     }
 } %}
@@ -32,9 +33,10 @@
 {% set imageTransformList = imageAsset|imageTransform(imageConfigPreset) %}
 {% set imageDefaultFormat = imageConfigPreset.formats|first %}
 {% set imageSizes = imageConfigPreset.sizes if imageConfigPreset.sizes else null  %}
+{% set imageDefaultIndex = (imageConfigPreset.defaultWidthPosition - 1) if imageConfigPreset.defaultWidthPosition else 1 %}
 
 {% if imageTransformList %}
-    {% set imageDefaultTransform = imageTransformList[imageDefaultFormat]|first %}
+    {% set imageDefaultTransform = imageTransformList[imageDefaultFormat][imageDefaultIndex] %}
     {% set imageTransformSrcset = imageTransformList|imageTxToSrcset %}
 {% endif %}
 
