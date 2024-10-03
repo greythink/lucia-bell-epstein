@@ -13,6 +13,7 @@
 {% set imageHasImgOnly = imageParams.imgOnly if (imageParams.imgOnly != null) else false %}
 {% set imageIsBackground = imageParams.background if (imageParams.background != null) else false %}
 {% set imageIsLazyLoaded = imageParams.lazy if (imageParams.lazy != null) else true %}
+{% set imageHasDynamicSrc = imageParams.dynamicSrc if (imageParams.dynamicSrc != null) else false %}
 
 
 
@@ -57,8 +58,10 @@
             <figure class="{{ imageFigureClass }}">
                 <img
                     class="{{ imageClass }} {{ 'lazyload' if imageIsLazyLoaded else '' }}"
-                    src="{{ imageDefaultTransform.url }}"
                     alt="{{ imageAltText }}"
+                    {% if not imageHasDynamicSrc %}
+                        src="{{ imageDefaultTransform.url }}"
+                    {% endif %}
                     {% if imageSizes %}
                         sizes="{{ imageSizes }}"
                     {% endif %}
