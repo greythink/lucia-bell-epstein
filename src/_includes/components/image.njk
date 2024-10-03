@@ -24,11 +24,14 @@
     },
     'carousel': {
         formats: ['jpeg'],
-        widths: [600, 800, 1200, 1800, 2100, 2400]
+        widths: [600, 800, 1200, 1800, 2100, 2400],
+        sizes: '(min-width: 1280px) 50vw, 83vw'
     }
 } %}
-{% set imageTransformList = imageAsset|imageTransform(imageConfig[imagePreset]) %}
-{% set imageDefaultFormat = imageConfig[imagePreset].formats|first %}
+{% set imageConfigPreset = imageConfig[imagePreset] %}
+{% set imageTransformList = imageAsset|imageTransform(imageConfigPreset) %}
+{% set imageDefaultFormat = imageConfigPreset.formats|first %}
+{% set imageSizes = imageConfigPreset.sizes if imageConfigPreset.sizes else null  %}
 
 {% if imageTransformList %}
     {% set imageDefaultTransform = imageTransformList[imageDefaultFormat]|first %}
@@ -54,8 +57,10 @@
                     class="{{ imageClass }} {{ 'lazyload' if imageIsLazyLoaded else '' }}"
                     src="{{ imageDefaultTransform.url }}"
                     alt="{{ imageAltText }}"
+                    {% if imageSizes %}
+                        sizes="{{ imageSizes }}"
+                    {% endif %}
                     {% if imageIsLazyLoaded %}
-                        data-sizes="auto"
                         data-src="{{ imageDefaultTransform.url }}"
                         data-srcset="{{ imageTransformSrcset }}"
                     {% else %}
