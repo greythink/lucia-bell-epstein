@@ -18,8 +18,9 @@
 (function () {
     // Initialise carousel
     var homepageCarousel = new Splide('#home-image-carousel', {
-        speed: 1000,
-        type: 'loop',
+        speed: 300,
+        type: 'fade',
+        rewind: true,
         mediaQuery: 'min',
         pagination: false,
         keyboard: 'global',
