@@ -13,20 +13,32 @@
 {% set imageHasImgOnly = imageParams.imgOnly if (imageParams.imgOnly != null) else false %}
 {% set imageIsBackground = imageParams.background if (imageParams.background != null) else false %}
 {% set imageIsLazyLoaded = imageParams.lazy if (imageParams.lazy != null) else true %}
+{% set imageHasDynamicSrc = imageParams.dynamicSrc if (imageParams.dynamicSrc != null) else false %}
 
 
 
+{# Ensure that widths are added in increasing order #}
 {% set imageConfig = {
     'default': {
         formats: ['jpeg'],
         widths: [1500]
+    },
+    'carousel': {
+        formats: ['jpeg'],
+        widths: [600, 800, 1200, 1800, 2100, 2400],
+        defaultWidthPosition: 2,
+        sizes: '(min-width: 1280px) 50vw, 83vw'
     }
 } %}
-{% set imageTransformList = imageAsset|imageTransform(imageConfig[imagePreset]) %}
-{% set imageDefaultFormat = imageConfig[imagePreset].formats|first %}
+{% set imageConfigPreset = imageConfig[imagePreset] %}
+{% set imageTransformList = imageAsset|imageTransform(imageConfigPreset) %}
+{% set imageDefaultFormat = imageConfigPreset.formats|first %}
+{% set imageSizes = imageConfigPreset.sizes if imageConfigPreset.sizes else null  %}
+{% set imageDefaultIndex = (imageConfigPreset.defaultWidthPosition - 1) if imageConfigPreset.defaultWidthPosition else 1 %}
 
 {% if imageTransformList %}
-    {% set imageDefaultTransform = imageTransformList[imageDefaultFormat]|first %}
+    {% set imageDefaultTransform = imageTransformList[imageDefaultFormat][imageDefaultIndex] %}
+    {% set imageTransformSrcset = imageTransformList|imageTxToSrcset %}
 {% endif %}
 
 
@@ -45,9 +57,20 @@
         {% else %}
             <figure class="{{ imageFigureClass }}">
                 <img
-                    class="{{ imageClass }}"
-                    src="{{ imageDefaultTransform.url }}"
+                    class="{{ imageClass }} {{ 'lazyload' if imageIsLazyLoaded else '' }}"
                     alt="{{ imageAltText }}"
+                    {% if not imageHasDynamicSrc %}
+                        src="{{ imageDefaultTransform.url }}"
+                    {% endif %}
+                    {% if imageSizes %}
+                        sizes="{{ imageSizes }}"
+                    {% endif %}
+                    {% if imageIsLazyLoaded %}
+                        data-src="{{ imageDefaultTransform.url }}"
+                        data-srcset="{{ imageTransformSrcset }}"
+                    {% else %}
+                        srcset="{{ imageTransformSrcset }}"
+                    {% endif %}
                 >
                 {% if imageCaption %}
                     <figcaption class="{{ imageCaptionClass }}">

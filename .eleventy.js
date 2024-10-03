@@ -1,4 +1,5 @@
 const imageTransformFilter = require('./src/_includes/filters/imageTransform.js');
+const imageTxToSrcsetFilter = require('./src/_includes/filters/imageTxToSrcset.js');
 
 
 
@@ -10,11 +11,13 @@ module.exports = function (config) {
 
     // Copy library files
     config.addPassthroughCopy({
-        'node_modules/@splidejs/splide/dist/js/splide.min.js': 'assets/js/libs/splide.min.js'
+        'node_modules/@splidejs/splide/dist/js/splide.min.js': 'assets/js/libs/splide.min.js',
+        'node_modules/lazysizes/lazysizes.min.js': 'assets/js/libs/lazysizes.min.js',
     });
 
     // Custom template filters
     config.addFilter('imageTransform', imageTransformFilter);
+    config.addFilter('imageTxToSrcset', imageTxToSrcsetFilter);
 
     return {
       dir: {
