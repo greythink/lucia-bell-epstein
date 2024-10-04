@@ -12,10 +12,8 @@
 
     /* Carousels */
     .splide__arrows {
-        @apply fixed bottom-6 left-1/2 -translate-x-1/2 w-56 h-6;
+        @apply fixed bottom-0 left-1/2 -translate-x-1/2 flex justify-between items-center w-56 h-14;
 
-        .splide__arrow { @apply absolute; }
-        .splide__arrow--prev { @apply left-1; }
-        .splide__arrow--next { @apply right-1; }
+        .splide__arrow { @apply p-5; }
     }
 }
