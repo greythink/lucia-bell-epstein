@@ -649,6 +649,11 @@ video {
   font-family: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+    /* Leading */
+    body {
+  line-height: 1.25;
+}
+
     /* Font smoothing */
     body {
   -webkit-font-smoothing: antialiased;
