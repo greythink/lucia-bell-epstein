@@ -4,10 +4,3 @@ window.addEventListener('resize', function () {
     // Create --vh CSS variable
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
-
-
-
-// Initialise lazysizes
-(function () {
-    window.lazySizes.init();
-})();
