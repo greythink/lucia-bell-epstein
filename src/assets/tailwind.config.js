@@ -33,6 +33,7 @@ module.exports = {
             spacing: {
                 '1/20': '5%',
                 '1/6': '16.666666%',
+                '15pc': '15%',
             },
             maxWidth: ({ theme }) => ({
                 ...theme('size'),
