@@ -673,7 +673,7 @@ video {
 /* Carousels */
 .splide__arrows {
   position: fixed;
-  bottom: 0px;
+  bottom: 0.5rem;
   left: 50%;
   display: -webkit-box;
   display: -webkit-flex;
