@@ -29,5 +29,10 @@
             label: 'Photos by Lucia Bell-Epstein'
         } %}
         {% include 'components/carousel.njk' %}
+
+        {# Carousel scripts #}
+        {# Moved to main markup to prevent lag in loading - was leading to a scrollbar for a few seconds #}
+        <script src="/assets/js/libs/splide.min.js"></script>
+        <script src="/assets/js/normal.js"></script>
     </article>
 {% endblock %}
