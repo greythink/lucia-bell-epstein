@@ -12,7 +12,7 @@
 
     /* Carousels */
     .splide__arrows {
-        @apply fixed bottom-2 left-1/2 -translate-x-1/2 flex justify-between items-center w-56 h-14;
+        @apply fixed bottom-2 left-1/2 -translate-x-1/2 flex justify-between items-center w-64 xs:w-80 h-14;
 
         .splide__arrow { @apply p-5; }
     }
