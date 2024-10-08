@@ -8,6 +8,7 @@ module.exports = function (config) {
     config.addPassthroughCopy('src/media');
     config.addPassthroughCopy('src/assets/js');
     config.addPassthroughCopy('src/assets/icons');
+    config.addPassthroughCopy({ 'src/assets/favicons': '.' });
     config.addPassthroughCopy('src/robots.txt');
 
     // Copy library files
