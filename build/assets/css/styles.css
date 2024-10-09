@@ -979,8 +979,8 @@ video {
 }
 @media (min-width: 1280px) {
 
-  .lg\:w-1\/5 {
-    width: 20%;
+  .lg\:w-18pc {
+    width: 18%;
   }
 }
 @media (min-width: 1536px) {
